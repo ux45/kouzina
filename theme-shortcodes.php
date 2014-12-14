@@ -1961,16 +1961,17 @@ function mixed_grid_sc($atts){
     extract(shortcode_atts(array(
   
         'post_page'  => '8',
-        'orderby'   => 'title',
+        'post_type'  => 'post,recipe',
+        'orderby'   => 'date',
         'order'     => 'desc',
-         'categories' => 'all',
-         'taxonomy' => ''
+         'categories' => '',
+         'taxonomy' => 'ingredient'
  
         ), $atts));
         
     global $post;
     $args = array(
-        'post_type' => 'recipe',
+        'post_type' => explode( ',', $post_type ),
         'post_status' => 'publish',
         'posts_per_page' => $post_page,
         'ignore_sticky_posts'   => 1,
@@ -2086,11 +2087,11 @@ function mixed_grid_sc($atts){
   while ( $qu->have_posts() ) : 
   $qu->the_post();
   if ($i % 3 == 0) {
-        woo_get_template_part( 'content', 'recipe' );
+        woo_get_template_part( 'content', get_post_type() );
         echo "<div class='fix'></div>";
       } 
     else{
-      woo_get_template_part( 'content', 'recipe' );
+      woo_get_template_part( 'content', get_post_type() );
     }
  $i+=1;
     
