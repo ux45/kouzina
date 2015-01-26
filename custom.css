@@ -40,3 +40,11 @@ margin: 0 0 0.5em;
 .home .post-meta{
   margin-bottom: 0;
 }
+.home .post{
+  margin: 0;
+  padding: 0;
+  border-bottom: none;
+}
+.home .pf-content .fix{
+  display: none;
+}
