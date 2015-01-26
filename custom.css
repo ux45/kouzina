@@ -1,0 +1,42 @@
+.listing-item {
+  height: 357px;
+  width: 47%;
+  margin-left: 1.5%;
+  margin-right: 1.5%;
+  margin-bottom: 20px;
+  float: left;
+  display: inline;
+  list-style: none;
+}
+.listing-item img {
+  margin-bottom: 15px;
+  height: auto;
+  padding: 3px;
+  border: 1px solid #e6e6e6;
+  background: #F8F8F8;
+  vertical-align: bottom;
+  max-width: 100%;
+}
+.listing-item .title {
+  font: normal 400 18px/1.45em "Georgia", sans-serif;
+  margin-bottom: .25em;
+  font: normal 22px/1.2em Georgia, serif !important;
+  color: #000000!important;
+}
+.listing-item .date{
+  display: block;
+}
+.listing-item .excerpt-dash{
+  display: none;
+}
+.home.page .title, .home.page > .title {
+font: normal 20px/1.2em Georgia, serif!important;
+color: #050405!important;
+margin: 0 0 0.5em;
+}
+.home .blog-item {
+ height: 357px!important;
+}
+.home .post-meta{
+  margin-bottom: 0;
+}
