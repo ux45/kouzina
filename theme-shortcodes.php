@@ -1998,16 +1998,18 @@ function mixed_grid_sc($atts){
     }
     
     if ($taxonomy == 'recipe_type') {
-        // string to array
-        $str = $categories;
-        $arr = explode(',', $str);
-        //var_dump($arr);
-
-      $args['tax_query'][] = array(
-        'taxonomy'  => 'recipe_type',
-        'field'   => 'slug',
-        'terms'   => $arr
-      );
+    	if($categories != 'all'){
+	    // string to array
+	    $str = $categories;
+	    $arr = explode(',', $str);
+	    //var_dump($arr);
+	
+	    $args['tax_query'][] = array(
+	        'taxonomy'  => 'recipe_type',
+	        'field'   => 'slug',
+	        'terms'   => $arr
+	     );
+	  }
     }
     if ($taxonomy == 'cuisine') {
         if($categories != 'all'){
