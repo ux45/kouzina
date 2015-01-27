@@ -693,8 +693,8 @@ function recipe_grid_sc($atts){
     }
     
     if ($taxonomy == 'recipe_type') {
+
 	    	if($categories != 'all'){
-	      
 	      // string to array
 	      $str = $categories;
 	      $arr = explode(',', $str);
@@ -706,7 +706,7 @@ function recipe_grid_sc($atts){
 	      'field'   => 'slug',
 	      'terms'   => $arr
 	    );
-	  }
+         }
     }
     if ($taxonomy == 'cuisine') {
 	    	if($categories != 'all'){
@@ -1998,20 +1998,16 @@ function mixed_grid_sc($atts){
     }
     
     if ($taxonomy == 'recipe_type') {
-        if($categories != 'all'){
-        
         // string to array
         $str = $categories;
         $arr = explode(',', $str);
         //var_dump($arr);
-       
 
       $args['tax_query'][] = array(
         'taxonomy'  => 'recipe_type',
         'field'   => 'slug',
         'terms'   => $arr
       );
-    }
     }
     if ($taxonomy == 'cuisine') {
         if($categories != 'all'){
@@ -2086,14 +2082,8 @@ function mixed_grid_sc($atts){
 
   while ( $qu->have_posts() ) : 
   $qu->the_post();
-  if ($i % 3 == 0) {
-        woo_get_template_part( 'content', get_post_type() );
-        echo "<div class='fix'></div>";
-      } 
-    else{
-      woo_get_template_part( 'content', get_post_type() );
-    }
- $i+=1;
+    woo_get_template_part( 'content', 'post' );
+    $i+=1;
     
   endwhile; 
 
